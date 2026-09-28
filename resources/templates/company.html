@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PT. Arthachem Putra Indonesia supplies chemical raw materials for food, feed, manufacturing, processing, sanitation, and water treatment applications.">
+  <title>PT. Arthachem Putra Indonesia | Chemical Raw Material Supply</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #086ccf;
+      --blue-dark: #003f89;
+      --green: #00ad32;
+      --yellow: #ffc400;
+      --ink: #132033;
+      --muted: #5d6c7d;
+      --line: #dce5ed;
+      --soft: #f4f8fb;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Manrope, sans-serif; color: var(--ink); background: var(--white); overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input { font: inherit; }
+    button, a, input { outline-offset: 4px; }
+    :focus-visible { outline: 3px solid var(--yellow); }
+    .container { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; display: inline-block; width: 32px; height: 4px; margin-right: 10px; background: var(--yellow); vertical-align: 3px; }
+    h2 { color: var(--blue-dark); font-size: clamp(38px, 5vw, 68px); line-height: 1; letter-spacing: -.05em; }
+    p { color: var(--muted); line-height: 1.75; }
+
+    nav { position: sticky; top: 0; z-index: 50; height: 82px; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
+    .nav-inner { height: 100%; display: grid; grid-template-columns: 150px 1fr auto; align-items: center; gap: 28px; }
+    .logo { width: 112px; height: 72px; display: grid; place-items: center; }
+    .logo img { width: 104px; height: 68px; object-fit: contain; }
+    .nav-menu { display: flex; justify-content: center; gap: 28px; font-size: 13px; font-weight: 700; }
+    .nav-menu a { border-bottom: 3px solid transparent; padding: 10px 0; }
+    .nav-menu a:hover { border-bottom-color: var(--green); }
+    .nav-cta { background: var(--yellow); color: var(--blue-dark); padding: 13px 18px; font-size: 12px; font-weight: 800; box-shadow: 4px 4px 0 var(--blue-dark); }
+
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: calc(100vh - 82px); }
+    .hero-copy { min-width: 0; padding: 78px clamp(36px, 4vw, 68px) 72px max(24px, calc((100vw - 1180px) / 2)); display: flex; flex-direction: column; justify-content: center; }
+    .hero h1 { max-width: 620px; margin: 22px 0 26px; color: var(--blue-dark); font-size: clamp(52px, 5.2vw, 84px); line-height: .94; letter-spacing: -.065em; overflow-wrap: normal; }
+    .hero h1 span { color: var(--green); }
+    .hero-copy > p { max-width: 640px; font-size: 18px; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 34px; }
+    .btn-primary { background: var(--blue); color: var(--white); padding: 16px 22px; font-weight: 800; }
+    .text-link { color: var(--blue-dark); border-bottom: 3px solid var(--yellow); padding: 8px 0; font-weight: 800; }
+    .hero-points { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 52px; border-top: 1px solid var(--line); }
+    .hero-points div { padding: 20px 18px 0 0; }
+    .hero-points div + div { border-left: 1px solid var(--line); padding-left: 20px; }
+    .hero-points strong { display: block; color: var(--blue-dark); font-size: 15px; }
+    .hero-points small { color: var(--muted); font-size: 11px; }
+    .hero-visual { position: relative; min-height: 620px; padding: 24px 28px 24px 0; }
+    .hero-bento { height: 100%; display: grid; grid-template-columns: 1.15fr .85fr; grid-template-rows: 1fr 1fr; gap: 12px; }
+    .visual-main, .visual-small { position: relative; min-width: 0; overflow: hidden; }
+    .visual-main { grid-row: 1 / 3; border-radius: 0 30px 30px 0; }
+    .visual-small { border-radius: 22px; }
+    .hero-bento img { width: 100%; height: 100%; object-fit: cover; }
+    .visual-main::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(0,45,94,.82)); }
+    .visual-caption { position: absolute; z-index: 2; left: 40px; right: 40px; bottom: 38px; color: var(--white); }
+    .visual-caption small { color: #cbe7ff; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .visual-caption h3 { max-width: 520px; margin-top: 8px; font-size: clamp(25px, 3vw, 38px); line-height: 1.1; }
+    .brand-mark { position: absolute; z-index: 3; top: 38px; right: 16px; width: 92px; height: 92px; display: grid; place-items: center; background: var(--yellow); color: var(--blue-dark); font-size: 12px; font-weight: 800; text-align: center; }
+
+    .supply-band { background: var(--blue-dark); color: var(--white); }
+    .supply-grid { display: grid; grid-template-columns: 1.15fr repeat(3, 1fr); }
+    .supply-title { background: var(--yellow); color: var(--blue-dark); padding: 26px; font-weight: 800; }
+    .supply-item { padding: 24px 26px; border-left: 1px solid rgba(255,255,255,.16); }
+    .supply-item strong { display: block; font-size: 14px; }
+    .supply-item small { color: #abc7e1; font-size: 10px; }
+
+    .about { padding: 108px 0; }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 88px; }
+    .about-title { position: sticky; top: 120px; height: max-content; }
+    .about-title h2 { margin: 18px 0; }
+    .about-copy > p { color: #42566b; font-size: 21px; }
+    .value-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 36px; }
+    .value { border-top: 5px solid var(--blue); background: var(--soft); padding: 24px; }
+    .value:nth-child(2) { border-top-color: var(--green); }
+    .value:nth-child(3) { border-top-color: var(--yellow); }
+    .value:nth-child(4) { border-top-color: var(--blue-dark); }
+    .value h3 { margin-bottom: 8px; color: var(--blue-dark); font-size: 18px; }
+    .value p { font-size: 13px; }
+
+    .portfolio { padding: 108px 0; background: var(--soft); }
+    .section-head { display: grid; grid-template-columns: 1fr .82fr; gap: 60px; align-items: end; margin-bottom: 42px; }
+    .section-head h2 { margin-top: 18px; }
+    .section-head p { font-size: 17px; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); background: var(--line); gap: 1px; }
+    .portfolio-card { min-height: 330px; padding: 32px; background: var(--white); display: flex; flex-direction: column; }
+    .portfolio-card .number { color: var(--green); font-size: 12px; font-weight: 800; }
+    .portfolio-card h3 { margin: 28px 0 12px; color: var(--blue-dark); font-size: 27px; }
+    .portfolio-card p { font-size: 14px; }
+    .portfolio-card a { align-self: flex-start; margin-top: auto; border-bottom: 3px solid var(--yellow); color: var(--blue-dark); padding: 7px 0; font-size: 12px; font-weight: 800; }
+
+    .products { padding: 108px 0; }
+    .product-top { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: end; }
+    .product-top h2 { margin-top: 18px; }
+    .search label { display: block; margin-bottom: 9px; color: var(--blue-dark); font-size: 12px; font-weight: 800; }
+    .search input { width: 100%; border: 1px solid var(--line); background: var(--soft); padding: 16px; color: var(--ink); }
+    .product-body { display: grid; grid-template-columns: 220px 1fr; gap: 40px; margin-top: 42px; }
+    .filters { border-top: 1px solid var(--line); }
+    .filters button { width: 100%; border: 0; border-bottom: 1px solid var(--line); background: transparent; padding: 16px 0; color: var(--muted); text-align: left; cursor: pointer; }
+    .filters button[aria-pressed="true"] { color: var(--blue-dark); font-weight: 800; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .product-card { min-height: 152px; border: 1px solid var(--line); padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+    .product-card:hover { border-color: var(--blue); background: #eff7ff; }
+    .product-card small { color: #39754a; font-size: 10px; font-weight: 800; text-transform: uppercase; }
+    .product-card h4 { margin-top: 8px; color: var(--blue-dark); font-size: 15px; }
+    .product-card a { align-self: flex-start; margin-top: 16px; color: var(--blue); font-size: 11px; font-weight: 800; }
+    .empty { grid-column: 1 / -1; padding: 34px; background: var(--soft); color: var(--muted); text-align: center; }
+
+    .applications { padding: 108px 0; background: var(--blue-dark); color: var(--white); }
+    .applications h2 { color: var(--white); }
+    .applications .eyebrow { color: #bfe2ff; }
+    .applications .section-head p { color: #b8cde0; }
+    .application-list { display: grid; grid-template-columns: 1.35fr repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.2); }
+    .application { min-height: 230px; padding: 30px 26px; border-right: 1px solid rgba(255,255,255,.2); display: flex; flex-direction: column; justify-content: space-between; }
+    .application:first-child { background: var(--yellow); color: var(--blue-dark); }
+    .application:last-child { border-right: 0; }
+    .application small { color: #a9c9e5; font-weight: 800; }
+    .application:first-child small { color: #6a5700; }
+    .application h3 { font-size: 23px; line-height: 1.2; }
+
+    .contact { padding: 88px 0; background: var(--soft); }
+    .contact-box { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; border: 1px solid var(--line); border-left: 9px solid var(--green); background: var(--white); padding: 46px 48px; }
+    .contact-box h2 { font-size: clamp(34px, 4.5vw, 56px); }
+    .contact-box p { margin-top: 12px; }
+    .contact-box a { background: var(--blue); color: var(--white); padding: 16px 22px; font-weight: 800; white-space: nowrap; }
+
+    footer { background: #061a33; color: var(--white); padding: 48px 0 18px; }
+    .footer-grid { display: grid; grid-template-columns: 1.25fr .75fr .75fr; gap: 60px; }
+    .footer-logo img { width: 128px; background: var(--white); }
+    footer p { max-width: 430px; margin-top: 16px; color: #96acc2; font-size: 12px; }
+    footer h4 { margin-bottom: 14px; color: var(--yellow); font-size: 11px; text-transform: uppercase; }
+    footer li { margin: 8px 0; color: #96acc2; font-size: 12px; list-style: none; }
+    .copy { display: flex; justify-content: space-between; margin-top: 32px; border-top: 1px solid rgba(255,255,255,.12); padding-top: 16px; color: #6f8ba5; font-size: 10px; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    @media (max-width: 980px) {
+      .nav-inner { grid-template-columns: 130px 1fr; }
+      .nav-menu { display: none; }
+      .nav-cta { justify-self: end; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { padding: 68px 24px; }
+      .hero-visual { min-height: 620px; padding: 18px; }
+      .supply-grid { grid-template-columns: 1fr 1fr; }
+      .supply-title { grid-column: 1 / -1; }
+      .about-grid, .section-head, .product-top { grid-template-columns: 1fr; gap: 30px; }
+      .about-title { position: static; }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
+      .portfolio-card:last-child { grid-column: 1 / -1; }
+      .product-body { grid-template-columns: 1fr; }
+      .filters { display: flex; overflow-x: auto; }
+      .filters button { width: auto; min-width: max-content; padding: 14px 18px; }
+      .product-grid { grid-template-columns: 1fr 1fr; }
+      .application-list { grid-template-columns: 1fr 1fr; }
+      .application { border-bottom: 1px solid rgba(255,255,255,.2); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1180px); }
+      nav { height: 72px; }
+      .logo { width: 94px; height: 60px; }
+      .logo img { width: 88px; height: 58px; }
+      .nav-cta { padding: 11px 13px; font-size: 10px; }
+      .hero { min-height: auto; }
+      .hero-copy { padding: 58px 14px; }
+      .hero h1 { font-size: 52px; }
+      .hero-points, .supply-grid, .value-list, .portfolio-grid, .product-grid, .application-list, .footer-grid { grid-template-columns: 1fr; }
+      .hero-points div + div { border-left: 0; padding-left: 0; }
+      .hero-visual { min-height: auto; padding: 14px; }
+      .hero-bento { grid-template-columns: 1fr; grid-template-rows: 400px 200px 200px; }
+      .visual-main { grid-row: auto; border-radius: 0; }
+      .visual-small { border-radius: 18px; }
+      .brand-mark { width: 78px; height: 78px; }
+      .supply-title, .portfolio-card:last-child, .footer-grid > div:first-child { grid-column: auto; }
+      .product-body { gap: 24px; }
+      .contact-box { grid-template-columns: 1fr; padding: 32px 28px; }
+      .copy { display: block; line-height: 1.8; }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a class="logo" href="#home" aria-label="AP Indonesia home"><img src="/assets/api-logo-navbar.png" alt="PT. Arthachem Putra Indonesia logo"></a>
+      <div class="nav-menu">
+        <a href="#about">Company</a>
+        <a href="#portfolio">Supply Focus</a>
+        <a href="#products">Products</a>
+        <a href="#applications">Applications</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-cta" href="#contact">REQUEST A QUOTE</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow reveal">Chemical Raw Material Supply</div>
+        <h1 class="reveal">Connected by chemistry. <span>driven by supply.</span></h1>
+        <p class="reveal">PT. Arthachem Putra Indonesia supplies chemical raw materials for production and processing needs across food, feed, manufacturing, sanitation, and water treatment applications.</p>
+        <div class="hero-actions reveal">
+          <a class="btn-primary" href="#products">VIEW RAW MATERIALS</a>
+          <a class="text-link" href="#contact">ASK ABOUT AVAILABILITY</a>
+        </div>
+        <div class="hero-points reveal">
+          <div><strong>Food Grade</strong><small>Formulation and processing materials</small></div>
+          <div><strong>Feed Grade</strong><small>Nutrition and production inputs</small></div>
+          <div><strong>Industrial Grade</strong><small>Manufacturing and treatment materials</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-bento reveal">
+          <div class="visual-main">
+            <img src="/assets/chemical-raw-material-warehouse.png" alt="Chemical raw materials in drums, IBC totes, and sacks arranged in an industrial warehouse">
+            <div class="visual-caption">
+              <small>Bulk raw material supply</small>
+              <h3>From sourcing to delivery, built around your production needs.</h3>
+            </div>
+          </div>
+          <div class="visual-small"><img src="/assets/chemical-raw-material-sacks.png" alt="Sealed chemical raw material sacks arranged on warehouse pallets"></div>
+          <div class="visual-small"><img src="/assets/chemical-ibc-drums.png" alt="Sealed IBC totes and chemical drums in a distribution warehouse"></div>
+        </div>
+        <div class="brand-mark">TRUST<br>SERVING<br>YOU</div>
+      </div>
+    </section>
+
+    <section class="supply-band" aria-label="Supply categories">
+      <div class="container supply-grid">
+        <div class="supply-title">AP INDONESIA</div>
+        <div class="supply-item"><strong>Food Grade Materials</strong><small>For formulation and processing</small></div>
+        <div class="supply-item"><strong>Feed Grade Materials</strong><small>For nutrition and production</small></div>
+        <div class="supply-item"><strong>Industrial Materials</strong><small>For manufacturing and treatment</small></div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-title reveal">
+          <div class="eyebrow">Company Profile</div>
+          <h2>A supply partner for chemical raw materials.</h2>
+          <p>Clear product information and a direct commercial response for industrial buyers.</p>
+        </div>
+        <div class="about-copy reveal">
+          <p>Based in Surabaya, PT. Arthachem Putra Indonesia supports businesses that need dependable access to chemical raw materials for their operating and production requirements.</p>
+          <div class="value-list">
+            <div class="value"><h3>Application-Based Selection</h3><p>Materials organized by grade and production use to make sourcing easier.</p></div>
+            <div class="value"><h3>Responsive Inquiry</h3><p>Direct communication for specifications, availability, and quotation.</p></div>
+            <div class="value"><h3>Practical Product Scope</h3><p>A focused portfolio of raw materials for real industrial processes.</p></div>
+            <div class="value"><h3>Supply Coordination</h3><p>Product and delivery discussions aligned with purchasing requirements.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Supply Focus</div><h2>One focus. Three material grades.</h2></div>
+          <p>The portfolio stays centered on chemical raw materials, grouped by the industries and production standards they serve.</p>
+        </div>
+        <div class="portfolio-grid">
+          <article class="portfolio-card reveal">
+            <div class="number">01 / FOOD GRADE</div>
+            <h3>Food Processing Raw Materials</h3>
+            <p>Acidulants, preservatives, antioxidants, emulsifiers, stabilizers, sweeteners, and other formulation inputs.</p>
+            <a href="#products" data-filter-link="food">SEE FOOD GRADE MATERIALS</a>
+          </article>
+          <article class="portfolio-card reveal">
+            <div class="number">02 / FEED GRADE</div>
+            <h3>Feed Production Raw Materials</h3>
+            <p>Minerals, vitamins, feed additives, and supporting materials for animal nutrition and feed production.</p>
+            <a href="#products" data-filter-link="feed">SEE FEED GRADE MATERIALS</a>
+          </article>
+          <article class="portfolio-card reveal">
+            <div class="number">03 / INDUSTRIAL GRADE</div>
+            <h3>Industrial Process Materials</h3>
+            <p>Chemical raw materials for manufacturing, sanitation, maintenance, and water treatment processes.</p>
+            <a href="#products" data-filter-link="industrial">SEE INDUSTRIAL MATERIALS</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="container">
+        <div class="product-top reveal">
+          <div><div class="eyebrow">Product Explorer</div><h2>Find the material you need.</h2></div>
+          <div class="search">
+            <label for="search">Search by product name or function</label>
+            <input id="search" type="search" placeholder="Example: Citric Acid, Sodium Benzoate, Caustic Soda">
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="filters reveal" aria-label="Product category filters">
+            <button type="button" data-filter="all" aria-pressed="true">All Materials</button>
+            <button type="button" data-filter="food" aria-pressed="false">Food Grade</button>
+            <button type="button" data-filter="feed" aria-pressed="false">Feed Grade</button>
+            <button type="button" data-filter="industrial" aria-pressed="false">Industrial Grade</button>
+          </div>
+          <div class="product-grid reveal" id="productGrid" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="applications" id="applications">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Industries and Applications</div><h2>Raw materials for real production needs.</h2></div>
+          <p>Every category is tied to the process it supports, so technical and purchasing teams can identify the right direction faster.</p>
+        </div>
+        <div class="application-list reveal">
+          <div class="application"><small>01</small><h3>Food and Beverage Processing</h3></div>
+          <div class="application"><small>02</small><h3>Animal Feed Production</h3></div>
+          <div class="application"><small>03</small><h3>Manufacturing and Processing</h3></div>
+          <div class="application"><small>04</small><h3>Sanitation and Water Treatment</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-box reveal">
+        <div><h2>Looking for a specific raw material?</h2><p>Send the product name, grade, specification, quantity, or application to our sales team.</p></div>
+        <a href="mailto:sales@ap-indonesia.com?subject=Chemical%20Raw%20Material%20Inquiry">CONTACT SALES</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo"><img src="/assets/api-logo.png" alt="PT. Arthachem Putra Indonesia logo"><p>Supplier of chemical raw materials for food, feed, manufacturing, sanitation, and water treatment applications.</p></div>
+        <div><h4>Contact</h4><ul><li>+62 31 505 7662</li><li>Fax +62 31 502 0850</li><li><a href="mailto:sales@ap-indonesia.com">sales@ap-indonesia.com</a></li><li>Surabaya, Indonesia</li></ul></div>
+        <div><h4>Navigation</h4><ul><li><a href="#about">Company Profile</a></li><li><a href="#portfolio">Supply Focus</a></li><li><a href="#products">Product Explorer</a></li><li><a href="#applications">Applications</a></li></ul></div>
+      </div>
+      <div class="copy"><span>© 2026 PT. Arthachem Putra Indonesia</span><span>Connected by chemistry. driven by supply.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const products = [
+      ["Citric Acid Anhydrous", "Acidulant and Buffering Agent", "food"],
+      ["Citric Acid Monohydrate", "Acidulant and Buffering Agent", "food"],
+      ["DL Malic Acid", "Acidulant", "food"],
+      ["Sodium Citrate", "Buffering Agent", "food"],
+      ["BHA", "Antioxidant", "food"],
+      ["BHT", "Antioxidant", "food"],
+      ["Lecithin", "Emulsifier", "food"],
+      ["Sodium Benzoate", "Preservative", "food"],
+      ["Potassium Sorbate", "Preservative", "food"],
+      ["Carrageenan", "Thickener and Stabilizer", "food"],
+      ["Modified Starch", "Thickener and Stabilizer", "food"],
+      ["Sucralose", "Sweetener", "food"],
+      ["Copper Sulphate", "Mineral", "feed"],
+      ["Dicalcium Phosphate", "Mineral", "feed"],
+      ["Magnesium Oxide", "Mineral", "feed"],
+      ["Vitamin C", "Vitamin", "feed"],
+      ["Vitamin D3", "Vitamin", "feed"],
+      ["Vitamin E50", "Vitamin", "feed"],
+      ["Aluminium Sulfate", "Water Treatment Material", "industrial"],
+      ["ATMP", "Water Treatment Material", "industrial"],
+      ["Caustic Soda 48%", "Industrial Process Material", "industrial"],
+      ["Caustic Soda Flake 98%", "Industrial Process Material", "industrial"],
+      ["Hydrochloric Acid", "Industrial Process Material", "industrial"],
+      ["Hydrogen Peroxide 50%", "Industrial Process Material", "industrial"],
+      ["Sodium Hypochlorite", "Sanitation and Treatment Material", "industrial"],
+      ["Sodium Sulfite", "Industrial Process Material", "industrial"]
+    ];
+
+    const grid = document.getElementById("productGrid");
+    const search = document.getElementById("search");
+    const filterButtons = [...document.querySelectorAll("[data-filter]")];
+    let currentFilter = "all";
+
+    function renderProducts() {
+      const query = search.value.toLowerCase().trim();
+      const visibleProducts = products.filter(([name, functionName, category]) => {
+        const matchesFilter = currentFilter === "all" || currentFilter === category;
+        const matchesSearch = !query || `${name} ${functionName}`.toLowerCase().includes(query);
+        return matchesFilter && matchesSearch;
+      });
+
+      grid.innerHTML = visibleProducts.length
+        ? visibleProducts.map(([name, functionName]) => `<article class="product-card"><div><small>${functionName}</small><h4>${name}</h4></div><a href="mailto:sales@ap-indonesia.com?subject=${encodeURIComponent(`Raw Material Inquiry: ${name}`)}">INQUIRE ABOUT PRODUCT</a></article>`).join("")
+        : '<div class="empty">No matching material found. Contact sales for other requirements.</div>';
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      filterButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.filter === filter)));
+      renderProducts();
+    }
+
+    filterButtons.forEach(button => button.addEventListener("click", () => setFilter(button.dataset.filter)));
+    document.querySelectorAll("[data-filter-link]").forEach(link => link.addEventListener("click", () => setFilter(link.dataset.filterLink)));
+    search.addEventListener("input", renderProducts);
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
+    renderProducts();
+  </script>
+</body>
+</html>

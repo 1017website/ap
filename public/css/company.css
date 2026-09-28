@@ -1,0 +1,17 @@
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .hero h1 {
+        font-size: clamp(42px, 13vw, 52px);
+        overflow-wrap: anywhere;
+    }
+
+    .hero h1 span {
+        display: block;
+    }
+}
