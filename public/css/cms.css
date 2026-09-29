@@ -57,9 +57,9 @@ body { background: #f2f6f3; }
 :focus-visible { outline-color: #ffc400; }
 
 .sidebar {
-    background: #073b2c;
-    border-right: 0;
-    box-shadow: 8px 0 24px #0b352717;
+    background: #f8faf9;
+    border-right: 1px solid #dbe5df;
+    box-shadow: 8px 0 24px #173b2d0a;
 }
 .sidebar .brand {
     margin: -28px -16px 24px;
@@ -68,20 +68,20 @@ body { background: #f2f6f3; }
     border-bottom: 4px solid #ffc400;
 }
 .sidebar .brand > span { color: #246348; }
-.sidebar .nav-label { color: #8fc9ae; }
-.sidebar nav a { color: #d6eadf; border-radius: 3px; }
-.sidebar nav a .icon { color: #91c6ac; }
-.sidebar nav a:hover { color: #fff; background: #0d503a; }
+.sidebar .nav-label { color: #62756b; }
+.sidebar nav a { color: #34483f; border-radius: 3px; }
+.sidebar nav a .icon { color: #71877c; }
+.sidebar nav a:hover { color: #075f39; background: #edf4f0; }
 .sidebar nav a.selected {
-    color: #fff;
-    background: #007a3b;
-    box-shadow: inset 4px 0 #ffc400;
+    color: #075f39;
+    background: #e3f2e8;
+    box-shadow: inset 4px 0 #00a34d;
 }
-.sidebar nav a.selected .icon { color: #fff; }
-.sidebar-footer { border-top-color: #275e49; }
-.sidebar-footer strong { color: #fff; }
-.sidebar-footer div > span { color: #9bc7b2; }
-.sidebar-footer .icon-button { color: #c8e1d5; }
+.sidebar nav a.selected .icon { color: #00843f; }
+.sidebar-footer { border-top-color: #dbe5df; }
+.sidebar-footer strong { color: #243a30; }
+.sidebar-footer div > span { color: #62766c; }
+.sidebar-footer .icon-button { color: #5f756a; }
 .sidebar-footer .avatar { background: #ffc400; color: #073b2c; }
 
 .topbar { border-bottom: 3px solid #dceddf; }
